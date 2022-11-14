@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text, View, TextInput, StyleSheet} from 'react-native';
+import {View, TextInput, StyleSheet} from 'react-native';
 import {useForm, Controller} from 'react-hook-form';
-// import {Radio, NativeBaseProvider, Input} from 'native-base';
+import {Radio, NativeBaseProvider, Text} from 'native-base';
 function index({
   name,
   label = '',
@@ -12,32 +12,37 @@ function index({
   ...rest
 }) {
   return (
-    <View style={{width: '100%'}}>
-      {label && <Text style={styles.label}>{label}</Text>}
-      {/* <Controller
+    <View
+      style={{
+        width: '100%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+      <NativeBaseProvider style={{flex: 1}}>
+        {label && <Text style={styles.label}>{label}</Text>}
+        <Controller
           control={control}
           name={name}
           render={({field: {onChange, value}}) => (
             <Radio.Group
-              // defaultValue={defaultValue}
+              defaultValue={defaultValue}
               onChange={onChange}
               name={name}
               value={value}
               flexDirection="row"
+              space={5}
               {...rest}>
               {options.map(item => (
-                <Radio
-                  value={item.value}
-                  key={item.key}
-                  // colorScheme={item.color || '#d9463e'}
-                >
-                  <Text>{item.name}</Text>
+                <Radio value={item.value} key={item.key}>
+                  <Text marginRight={3}> {item.name}</Text>
                 </Radio>
               ))}
             </Radio.Group>
           )}
-        /> */}
-      {/* {errors[name] && <Text>This is required.</Text>} */}
+        />
+        {/* {errors[name] && <Text>This is required.</Text>} */}
+      </NativeBaseProvider>
     </View>
   );
 }

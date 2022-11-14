@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import {NativeRouter, Route, Link} from 'react-router-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import {
   Colors,
@@ -26,14 +27,16 @@ const App = () => {
   };
 
   return (
-    <NativeRouter>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={'#d9463e'}
-      />
+    <SafeAreaProvider>
+      <NativeRouter>
+        <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor={'#d9463e'}
+        />
 
-      <MainRoute />
-    </NativeRouter>
+        <MainRoute />
+      </NativeRouter>
+    </SafeAreaProvider>
   );
 };
 

@@ -9,6 +9,7 @@ function index({
   //   value,
   //   onBlur,
   control,
+
   ...rest
 }) {
   return (
