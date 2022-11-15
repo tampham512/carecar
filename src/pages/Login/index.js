@@ -25,12 +25,10 @@ const listLogin = [
   {type: 'APPLE', key: 'APPLE', icon: AppleIcon},
   {type: 'FACEBOOK', key: 'FACEBOOK', icon: FacebookIcon},
 ];
-const schema = yup
-  .object({
-    number_phone: yup.string().required(),
-    password: yup.string().required(),
-  })
-  .required();
+const schema = yup.object({
+  number_phone: yup.string().required(),
+  password: yup.string().required(),
+});
 
 function Login() {
   const {
@@ -46,7 +44,7 @@ function Login() {
   const onSubmit = data => alert(JSON.stringify(data));
   const handleRegister = () => alert('Regiter link');
   const handlePressIconLogin = type => alert(type);
-  // alert(JSON.stringify(getValues()));
+
   return (
     <View style={{flex: 1}}>
       <View style={{backgroundColor: '#d9463e', flex: 0.5}} />
@@ -104,7 +102,6 @@ function Login() {
           <View style={{width: 100, marginBottom: 10}}>
             <Button
               title="Đăng ký"
-              onPress={handleRegister}
               style={{paddingVertical: 8, borderRadius: 5}}
             />
           </View>

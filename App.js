@@ -17,7 +17,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import MainRoute from '../carecar/routes/index';
+import MainRoute from './src/routes/index';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
