@@ -3,8 +3,9 @@ import {View, Text, StyleSheet, ScrollView, Image} from 'react-native';
 import {SITE_MAP} from '../../../utils/constants/Path';
 import {Link} from 'react-router-native';
 import HomeIcon from '../../../assets/Icons/home.png';
+// import Icon from 'react-native-vector-icons/FontAwesome';
 // import * as S from './styled';
-function MenuDeco({children}) {
+function Navigation({children}) {
   const menuList = [
     {
       title: 'Trang Chủ',
@@ -13,10 +14,10 @@ function MenuDeco({children}) {
       path: SITE_MAP.INDEX.path,
     },
     {
-      title: 'Lịch Hẹn',
+      title: 'Contacts',
       icon: '',
-      menu: SITE_MAP.INDEX.menu,
-      path: SITE_MAP.INDEX.path,
+      menu: SITE_MAP.CONTACT.menu,
+      path: SITE_MAP.CONTACT.path,
     },
     {
       title: 'QR-Code Rửa Xe',
@@ -55,7 +56,7 @@ function MenuDeco({children}) {
   );
 }
 
-export default MenuDeco;
+export default Navigation;
 const styles = StyleSheet.create({
   container: {
     height: 50,

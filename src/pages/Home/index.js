@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import MenuDeco from '../../containers/layout/MenuDeco';
+import Navigation from '../../containers/layout/Navigation';
 function index() {
   return (
-    <MenuDeco>
+    <Navigation>
       <Text>Home</Text>
-    </MenuDeco>
+    </Navigation>
   );
 }
 

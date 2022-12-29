@@ -7,6 +7,7 @@ import {SITE_MAP} from '../utils/constants/Path';
 const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
 const Home = lazy(() => import('../pages/Home'));
+const Contacts = lazy(() => import('../pages/Contacts'));
 
 const listRoute = [
   {
@@ -16,13 +17,18 @@ const listRoute = [
   },
   {
     path: SITE_MAP.REGISTER,
-    exact: false,
+    exact: true,
     component: <Register />,
   },
   {
     path: SITE_MAP.INDEX.path,
-    exact: false,
+    exact: true,
     component: <Home />,
+  },
+  {
+    path: SITE_MAP.CONTACT.path,
+    exact: true,
+    component: <Contacts />,
   },
 ];
 
